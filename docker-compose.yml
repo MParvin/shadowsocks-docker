@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  socks:
+    image: mparvin/shadowsocks2
+    command: "-s 'ss://AEAD_CHACHA20_POLY1305:${encryption_key}@:${server_port}' -verbose"
+
+  shadowsocks-client:
+    image: mparvin/shadowsocks2
+    restart: always
+    ports:
+      - ${client_port}:${client_port}
+    command: "-c 'ss://AEAD_CHACHA20_POLY1305:${encryption_key}@socks:${server_port}' -verbose -socks :${client_port}  -u"
