@@ -7,7 +7,7 @@ read -p "Enter the inside firewall IP address: " inside
 read -p "Enter the inside firewall username: " insideuser
 
 # Generate encryption key and show as recommended to user
-key=$(openssl rand -base64 32)
+key=$(openssl rand -base64 32 | tr -d "=+/" | cut -c1-32)
 echo "This is example encryption key, that you can use in next step: $key"
 # get encrypted key
 read -p "Enter the encryption key, Press enter to use generated key : " enc_key
