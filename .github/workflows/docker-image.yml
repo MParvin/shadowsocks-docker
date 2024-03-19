@@ -25,4 +25,4 @@ jobs:
       with:
         push: true
         tags: ${{ env.IMAGE_NAME }}
-        file: Dockerfile-alpine
+        file: Dockerfile
