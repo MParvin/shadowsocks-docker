@@ -5,7 +5,7 @@ on:
     branches: [ "master" ]
 
 env:
-  IMAGE_NAME: "mparvin/shadowsocks-docker:latest"
+  IMAGE_NAME: "mparvin/shadowsocks2:latest"
 
 jobs:
   build:
