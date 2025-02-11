@@ -1,8 +1,8 @@
-version: '3'
-
+name: shadowsocks-server
 services:
   socks:
     image: mparvin/shadowsocks2
     ports:
       - ${server_ip}:${server_port}:${server_port}
+    restart: always
     command: "/app/go-shadowsocks2 -s 'ss://AEAD_CHACHA20_POLY1305:${encryption_key}@:${server_port}' -verbose"
