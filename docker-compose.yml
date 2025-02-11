@@ -1,9 +1,9 @@
-version: '3'
-
+name: shadowsocks
 services:
   socks:
     image: mparvin/shadowsocks2
     command: "-s 'ss://AEAD_CHACHA20_POLY1305:${encryption_key}@:${server_port}' -verbose"
+    restart: always
 
   shadowsocks-client:
     image: mparvin/shadowsocks2
